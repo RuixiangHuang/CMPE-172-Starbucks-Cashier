@@ -1,0 +1,10 @@
+apiVersion: "extensions/v1beta1"
+kind: "Ingress"
+metadata:
+  name: "spring-starbucks-casher-ingress"
+  namespace: "default"
+spec:
+  backend:
+    serviceName: "spring-starbucks-casher-service"
+    servicePort: 8080
+

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-starbucks-casher
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      name: spring-starbucks-casher
+  replicas: 4 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        name: spring-starbucks-casher
+    spec:
+      containers:
+      - name: spring-starbucks-casher
+        image: raidenpoi/spring-starbucks-casher:v2.0
+        ports:
+        - containerPort: 8080
+

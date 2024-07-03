@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-starbucks-casher
+  namespace: default
+  labels:
+    name: spring-starbucks-casher
+spec:
+  containers:
+    - image: raidenpoi/spring-starbucks-casher:v2.0
+      name: spring-starbucks-casher
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
